@@ -7,7 +7,9 @@ function factoriza(num) {
             factoriza.push(i);
         }
     }
-    return factors;
+    return factoriza;
 }
 
 console.log(factoriza(28)); // [1, 2, 4, 7, 14, 28]
+console.log(factoriza(12)); // [1, 2, 3, 4, 6, 12]
+console.log(factoriza(100)); // [1, 2, 4, 5, 10, 20, 25, 50, 100]

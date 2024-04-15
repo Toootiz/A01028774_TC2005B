@@ -5,3 +5,5 @@ function ordenarLista(arr) {
 }
 
 console.log(ordenarLista(['vaca', 'araña', 'orangutan', 'pez'])); // ['araña', 'orangutan', 'pez', 'vaca']
+console.log(ordenarLista(['hola', 'mundo'])); // ['hola', 'mundo']
+console.log(ordenarLista(['como', 'te', 'llamas'])); // [ 'como', 'llamas', 'te' ]

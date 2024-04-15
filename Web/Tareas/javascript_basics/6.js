@@ -23,3 +23,5 @@ function hackerSpeak(str) {
 }
 
 console.log(hackerSpeak('Javascript es divertido')); // J4v45c1pt 35 d1v3rt1d0
+console.log(hackerSpeak('Hola mundo')); // H0l4 mund0
+console.log(hackerSpeak('Minecraft es un buen juego')); // S0y h4ck3r

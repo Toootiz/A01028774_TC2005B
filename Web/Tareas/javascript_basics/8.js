@@ -10,4 +10,7 @@ function quitaDuplicados(arr){
     }
     console.log(newArr)
 }
+
 quitaDuplicados([2,3,4,5,6,7,8,9,2,3,4,5,6,7,8,9]) // [2,3,4,5,6,7,8,9]
+quitaDuplicados([1, 0, 1, 1, 0, 0]) // [1, 0]
+quitaDuplicados([1, 2, 3, 4, 5, 6, 7, 8, 9]) // [1, 2, 3, 4, 5, 6, 7, 8, 9]

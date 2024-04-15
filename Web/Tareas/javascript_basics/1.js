@@ -1,14 +1,14 @@
 //Escribe una función que encuentre el primer carácter de un cadena de texto que no se repite.
 
 
-function primerquenoserepite(s) {
+function primerquenoserepite(str) {
     let charCount = { };
     
-    for (let i=0;i<s.length;i++){
-        if (!charCount[s[i]]){
-            charCount [s[i]] = 1;
+    for (let i=0;i<str.length;i++){
+        if (!charCount[str[i]]){
+            charCount [str[i]] = 1;
         }else{
-           charCount[s[i]] += 1;  
+           charCount[str[i]] += 1;  
         }
     }
     

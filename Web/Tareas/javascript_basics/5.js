@@ -7,3 +7,5 @@ function mcd(a, b) {
     return mcd(b, a % b);
 }
 console.log(mcd(12, 8)); // 4
+console.log(mcd(15, 10)); // 5
+console.log(mcd(9, 3)); // 3
