@@ -13,7 +13,7 @@
 *** https://www.markdownguide.org/basic-syntax/#reference-style-links
 -->
 [![MIT License][license-shield]][license-url]
-[![LinkedIn][linkedin-shield]][https://www.linkedin.com/in/gabriel-mu%C3%B1oz-luna-8960ab230/]
+[![LinkedIn][linkedin-shield]](https://www.linkedin.com/in/gabriel-mu%C3%B1oz-luna-8960ab230/)
 
 
 
