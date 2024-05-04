@@ -2,7 +2,7 @@
 
 En esta actividad se hizo un juego de pong y un simon dice en unity.
 
-#Instalacion 
+# Instalacion 
 
 1. Clonar el repositorio
 
