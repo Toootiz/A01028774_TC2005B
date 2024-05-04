@@ -2,6 +2,17 @@
 
 En esta actividad se hizo un juego de pong y un simon dice en unity.
 
+#Instalacion 
+
+1. Clonar el repositorio
+
+```sh
+git clone git@github.com:Toootiz/A01028774_TC2005B.git 
+```
+
+2. Cargar la carpeta de juego en Unity, la carpeta es Clase dentro de Videojuegos
+
+
 ## Pantalla de in inicio
 
 La pantalla de inicio tiene tres botones que cuentan con el juego de pong, el juego de simon y los creditos.
