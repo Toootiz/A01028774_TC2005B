@@ -1,42 +1,45 @@
-/*
-Highligth the button and make it play a sound
-
-Gilberto Echeverria
-2024-04-24
-*/
-
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class SimonButton : MonoBehaviour
 {
     [SerializeField] float delay;
-
     Color originalColor;
-
     AudioSource audioSource;
 
-    // Start is called before the first frame update
+    // Método para inicializar el botón
     public void Init(int index)
     {
         originalColor = GetComponent<Image>().color;
         audioSource = GetComponent<AudioSource>();
+        // Cargamos el clip de audio asociado al botón
         audioSource.clip = Resources.Load<AudioClip>($"Audio/{index}");
     }
 
+    // Método para resaltar el botón y reproducir el sonido asociado
     public void Highlight()
     {
+        // Reproducimos el sonido asociado al botón
         audioSource.Play();
+        // Cambiamos temporalmente el color del botón
         StartCoroutine(ChangeColor());
     }
 
+    // Corutina para cambiar el color del botón temporalmente
     IEnumerator ChangeColor()
     {
-        GetComponent<Image>().color = Color.white;
-        // Wait a moment before restoring the original color
+        // Cambiamos el color a negro para resaltar
+        GetComponent<Image>().color = Color.black;
+        // Esperamos un momento antes de restaurar el color original
         yield return new WaitForSeconds(delay);
+        // Restauramos el color original del botón
+        GetComponent<Image>().color = originalColor;
+    }
+
+    // Método para restablecer el color original del botón
+    public void ResetColor()
+    {
         GetComponent<Image>().color = originalColor;
     }
 }
