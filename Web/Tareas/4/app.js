@@ -2,13 +2,21 @@
 
 // Importing modules
 import express from "express";
-
+import fs from "fs"
 import mysql from "mysql2/promise";
 
 const app = express();
 const port = 3000;
 
 app.use(express.json());
+
+app.use(express.static("public"));
+
+app.get("/", (req, res) => {
+  const file = fs.readFileSync("public/html/hello.html", "utf8");
+  res.status(200).send(file);
+
+})
 
 // Function to connect to the MySQL database
 

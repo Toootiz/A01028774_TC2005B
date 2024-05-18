@@ -1,0 +1,32 @@
+*{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    border: 2px solid color black;
+}
+
+html {
+    background-color: blueviolet;
+}
+
+body{
+    background-color: rgb(218, 179, 255);
+}
+h1 {
+    color: blue;
+    margin-left: 10px;
+    padding: 10px;
+
+}
+
+a {
+    margin: 15px;
+    padding: 10px;
+}
+
+#css_cheat_sheet {
+    background-color: rgb(255, 242, 0);
+    margin: 20px;
+    padding: 10px;
+    color: aqua;
+    border-radius: 50%;
+}
+

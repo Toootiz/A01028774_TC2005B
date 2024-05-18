@@ -800,6 +800,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1494405049}
   - component: {fileID: 1494405048}
+  - component: {fileID: 1494405050}
   m_Layer: 0
   m_Name: GameController
   m_TagString: Untagged
@@ -825,7 +826,6 @@ MonoBehaviour:
   level: 0
   playerTurn: 0
   counter: 0
-  numButtons: 4
   buttonPrefab: {fileID: 7424903680631250799, guid: 923c407cd97cb5d4498ab7013a0ed916, type: 3}
   buttonParent: {fileID: 1520760083}
   Texto: {fileID: 249224050}
@@ -846,6 +846,20 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1494405050
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1494405047}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 253f783ae426d954cb280684be9ca299, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  url: http://localhost:3000
+  getEndpoint: /buttons
 --- !u!1 &1520760082
 GameObject:
   m_ObjectHideFlags: 0

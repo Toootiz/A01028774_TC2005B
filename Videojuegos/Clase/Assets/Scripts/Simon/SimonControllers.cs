@@ -11,6 +11,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 using UnityEngine.SceneManagement;
+using System;
 
 public class SimonController : MonoBehaviour
 {
@@ -22,7 +23,7 @@ public class SimonController : MonoBehaviour
 
     [SerializeField] int counter = 0;
 
-    [SerializeField] int numButtons = 0;
+    //[SerializeField] int numButtons = 0;
 
     [SerializeField] GameObject buttonPrefab;
 
@@ -33,14 +34,42 @@ public class SimonController : MonoBehaviour
     
     [SerializeField] TextMeshProUGUI Max;
 
+   public string apiData = @"
+    {
+        ""buttons"": [
+            {
+                ""id"": 0,
+                ""r"": 1.0,
+                ""g"": 0.0,
+                ""b"": 0.0
+            },
+            {
+                ""id"": 1,
+                ""r"": 0.1,
+                ""g"": 0.0,
+                ""b"": 0.0
+            },
+            {
+                ""id"": 2,
+                ""r"": 0,
+                ""g"": 0,
+                ""b"": 255
+            }
+        ]
+    }
+    ";
+
+    [SerializeField] ColorButtons allButtons;
+
     // Start is called before the first frame update
     void Start()
     {
         DisplayHighScore();
-        PrepareButtons();
+        //PrepareButtons();
         Texto.text = "Simon Says";
         Turno.text = "Turno: 0";
         AddToSequence();
+        GetComponent<APIConection>().GetData();
     }
 
      public void GameOver() {
@@ -53,20 +82,37 @@ public class SimonController : MonoBehaviour
     }
 
     // Configure the callback functions for the buttons
+    /*
     void PrepareButtons()
     {
-        for (int i=0; i<numButtons; i++) {
-            int index = i;
+        
+        //for (int i=0; i<numButtons; i++) {
+            //int index = i;
             
             // Create the copies of the button as children of the panel
 
             GameObject newButton = Instantiate(buttonPrefab, buttonParent);
-            newButton.GetComponent<Image>().color = Color.HSVToRGB((float)index/numButtons, 1, 1);
-            newButton.GetComponent<SimonButton>().Init(index);
+            //newButton.GetComponent<Image>().color = Color.HSVToRGB((float)index/numButtons, 1, 1);
+            //newButton.GetComponent<SimonButton>().Init(index);
             buttons.Add(newButton.GetComponent<SimonButton>());
             buttons[i].gameObject.GetComponent<Button>().onClick.AddListener(() => ButtonPressed(index));
 
         
+        }
+        */
+
+    public void PrepareButtons()
+        {
+            //convert the json into an object
+            allButtons = JsonUtility.FromJson<ColorButtons>(apiData);
+
+            foreach (ColorButton buttonData in allButtons.buttons)
+            {
+                GameObject newButton = Instantiate(buttonPrefab, buttonParent);
+                newButton.GetComponent<Image>().color = new Color(buttonData.r, buttonData.g, buttonData.b);
+                newButton.GetComponent<SimonButton>().Init(buttonData.id);
+                buttons.Add(newButton.GetComponent<SimonButton>());
+                newButton.GetComponent<Button>().onClick.AddListener(() => ButtonPressed(buttonData.id));
         }
         // Start the game by adding the first button
     }
@@ -78,7 +124,7 @@ public class SimonController : MonoBehaviour
     void AddToSequence()
     {
         // Add a new button to the sequence
-        sequence.Add(Random.Range(0, buttons.Count));
+        sequence.Add(UnityEngine.Random.Range(0, buttons.Count));
         StartCoroutine(PlaySequence());
     }
 
