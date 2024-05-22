@@ -34,30 +34,7 @@ public class SimonController : MonoBehaviour
     
     [SerializeField] TextMeshProUGUI Max;
 
-   public string apiData = @"
-    {
-        ""buttons"": [
-            {
-                ""id"": 0,
-                ""r"": 1.0,
-                ""g"": 0.0,
-                ""b"": 0.0
-            },
-            {
-                ""id"": 1,
-                ""r"": 0.1,
-                ""g"": 0.0,
-                ""b"": 0.0
-            },
-            {
-                ""id"": 2,
-                ""r"": 0,
-                ""g"": 0,
-                ""b"": 255
-            }
-        ]
-    }
-    ";
+   public string apiData = @"";
 
     [SerializeField] ColorButtons allButtons;
 
