@@ -1,0 +1,124 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+}
+
+.property {
+    margin-bottom: 20px;
+}
+
+h1 {
+    text-align: center;
+    color: #333;
+}
+
+h2 {
+    color: #555;
+}
+
+.example {
+    padding: 10px;
+    margin-top: 10px;
+    border: 1px solid #ccc;
+}
+
+/* border */
+#border .example {
+    border: 2px solid #000;
+}
+
+/* border-left, border-right, border-top, border-bottom */
+#border-left .example {
+    border-left: 5px solid red;
+    border-right: 5px solid blue;
+    border-top: 5px solid green;
+    border-bottom: 5px solid yellow;
+}
+
+/* border-radius */
+#border-radius .example {
+    border: 2px solid #000;
+    border-radius: 10px;
+}
+
+/* background-image */
+#background-image .example {
+    background-image: url('https://via.placeholder.com/150');
+    background-size: cover;
+    color: white;
+}
+
+/* color */
+#color .example {
+    color: #ff6347;
+}
+
+/* font */
+#font .example {
+    font: italic bold 16px Arial, sans-serif;
+}
+
+/* font-family */
+#font-family .example {
+    font-family: 'Courier New', Courier, monospace;
+}
+
+/* font-style, font-weight */
+#font-style .example {
+    font-style: italic;
+    font-weight: bold;
+}
+
+/* width, height */
+#width .example {
+    width: 150px;
+    height: 150px;
+    background-color: #f0f0f0;
+}
+
+/* list-style */
+#list-style .example {
+    list-style: square;
+    padding-left: 20px;
+}
+#list-style .example ul {
+    list-style-type: square;
+}
+
+/* margin */
+#margin .example {
+    margin: 20px;
+    border: 1px solid #000;
+}
+
+/* padding */
+#padding .example {
+    padding: 20px;
+    border: 1px solid #000;
+}
+
+/* overflow */
+#overflow .example {
+    width: 100px;
+    height: 100px;
+    overflow: scroll;
+    background-color: #f0f0f0;
+}
+
+/* display */
+#display .example {
+    display: none;
+}
+
+/* position */
+#position .example {
+    position: relative;
+    top: 10px;
+    left: 10px;
+    background-color: #f0f0f0;
+}
+
+/* filter */
+#filter .example {
+    filter: grayscale(100%);
+}
